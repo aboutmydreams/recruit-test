@@ -22,7 +22,7 @@ ts = numpy.array([t1, t2, t3, t4, t5, t6, t7, t8, t9, t10, t11, t12])
 def test_random_data():
     all_exam = []
     init_count = numpy.array([0, 0, 0, 0, 0])
-    for i in range(10000):
+    for _ in range(10000):
         this_exam = [0, 0, 0, 0, 0]
         for t in ts:
             this_count = random.choice(t)
@@ -33,8 +33,8 @@ def test_random_data():
 
     print(init_count)
 
-    print(max([max(i) for i in all_exam]))  # 19
-    print(min([max(i) for i in all_exam]))  # 8
+    print(max(max(i) for i in all_exam))
+    print(min(max(i) for i in all_exam))
 
 
 test_random_data()
